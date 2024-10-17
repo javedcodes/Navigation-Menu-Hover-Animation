@@ -1,0 +1,96 @@
+/* Importing Google Font 'Poppins' for a modern and clean typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Universal Reset for consistent margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the body to center the content vertically and horizontally */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  background: #FFE5B4;
+}
+
+/* Styling for the navigation menu container */
+.nav-links {
+  display: flex;
+  align-items: center; 
+  background: #fff; 
+  padding: 20px 15px; 
+  border-radius: 12px; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for individual menu items (li) */
+.nav-links li {
+  list-style: none;
+  margin: 0 12px;
+}
+
+/* Styling for the links inside the navigation menu */
+.nav-links li a {
+  position: relative;
+  color: #5A3E36;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 6px 0; 
+  text-decoration: none;
+}
+
+/* Hover effect for menu links - underlining animation */
+.nav-links li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #FFB830;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+/* Hover state - animates the underline to grow across the link */
+.nav-links li a:hover:before {
+  width: 100%; /* Expands the line to cover the entire link */
+}
+
+/* Special animation for the 'center' link (About Us) */
+.nav-links li.center a:before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Special animation for the 'upward' link (Pet Services) */
+.nav-links li.upward a:before {
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+
+/* Hover effect for the 'upward' link - makes the line visible and moves it up */
+.nav-links li.upward a:hover:before {
+  bottom: 0px;
+  opacity: 1; 
+}
+
+/* Special animation for the 'forward' link (Contact) */
+.nav-links li.forward a:before {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect for the 'forward' link - scales the line to full width */
+.nav-links li.forward a:hover:before {
+  transform: scaleX(1); 
+  transform-origin: left;
+}
